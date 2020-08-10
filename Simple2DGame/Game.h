@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <vector>
+#include <ctime>
 
 #include "SFML/Graphics.hpp"
 #include <SFML/System.hpp>
@@ -25,8 +26,15 @@ private:
 
 	// Mouse positions
 	sf::Vector2i mousePosWindow;
+	// Most SFML operations are done with floats
+	sf::Vector2f mousePosView;
 
 	// Game logic
+	unsigned points;
+	float enemySpawnTimer;
+	float enemySpawnTimerMax;
+	int maxEnemies;
+	bool mouseHeld;
 
 	// Game objects
 	std::vector<sf::RectangleShape> enemies;
@@ -52,5 +60,6 @@ public:
 	void update();
 	void renderEnemies();
 	void render();
+	void printPoints();
 };
 

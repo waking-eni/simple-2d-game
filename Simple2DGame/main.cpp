@@ -4,11 +4,15 @@
 
 int main() {
 
+	// Init srand
+	std::srand(static_cast<unsigned>(time(NULL)));
+
 	// Init game engine
 	Game game;
 
 	// Game loop
-	while (game.running()) {
+	while (game.running()) 
+	{
 
 		// Update
 		game.update();
@@ -18,6 +22,7 @@ int main() {
 	}
 
 	// End of game
+	game.printPoints();
 
 	return 0;
 }
